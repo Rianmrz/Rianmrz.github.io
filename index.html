@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Belajar</title>
+    <style>
+        /* Style untuk kontainer peta */
+        #map-container {
+            height: 500px;
+            width: 100%;
+        }
+
+        /* Style untuk tombol lokasi */
+        .location-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        /* Style untuk info lokasi */
+        .location-info {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Peta Lokasi Belajar</h1>
+
+    <div id="map-container"></div>
+
+    <div class="location-info" id="location1-info">
+        <h2>Lokasi 1</h2>
+        <p>Deskripsi lokasi belajar 1.</p>
+    </div>
+
+    <div class="location-info" id="location2-info">
+        <h2>Lokasi 2</h2>
+        <p>Deskripsi lokasi belajar 2.</p>
+    </div>
+
+    <div class="location-info" id="location3-info">
+        <h2>Lokasi 3</h2>
+        <p>Deskripsi lokasi belajar 3.</p>
+    </div>
+
+    <button class="location-button" onclick="showLocation(1)">Tampilkan Lokasi 1</button>
+    <button class="location-button" onclick="showLocation(2)">Tampilkan Lokasi 2</button>
+    <button class="location-button" onclick="showLocation(3)">Tampilkan Lokasi 3</button>
+
+    <script>
+        function showLocation(locationId) {
+            // Semua info lokasi disembunyikan terlebih dahulu
+            document.querySelectorAll('.location-info').forEach(function(info) {
+                info.style.display = 'none';
+            });
+
+            // Tampilkan info lokasi yang sesuai dengan tombol yang diklik
+            const locationInfo = document.getElementById(`location${locationId}-info`);
+            if (locationInfo) {
+                locationInfo.style.display = 'block';
+            }
+        }
+    </script>
+
+    <!-- Anda dapat menambahkan kode JavaScript untuk menampilkan peta di sini (misalnya, menggunakan Google Maps API). -->
+
+</body>
+</html>
